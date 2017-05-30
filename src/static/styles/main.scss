@@ -1,5 +1,102 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss';
-@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+// @import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss';
+// @import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import "bootstrap.min.css";
 
 // can add Boostrap overrides, additional Sass/CSS below...
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#main {
+  height: 100%;
+}
+
+.Header {
+  padding: 4px;
+  background: #eeffee;
+  height: 38px;
+  width: 100%;
+}
+.Header-component {
+}
+.Header-content {
+  float: left;
+}
+.Header-content-switch {
+  height: 32px;
+  float: left;
+}
+.Header-content-switch img {
+  height: 28px;
+}
+.Header-user-pulldown {
+  float: right;
+  height: 32px;
+  width: 32px;
+}
+.Header-user-pulldown img {
+  height: 28px;
+}
+
+.com {
+  background: #fafafa;
+  margin: 20px;
+}
+
+.comment {
+  margin: 10px;
+  padding: 10px;
+  width: 500px;
+  border: thin solid #888;
+  border-radius: 2px;
+  margin-right: auto;
+  margin-left : auto;
+}
+.comment .comment-attrs {
+  height: 90px;
+}
+.attribute-text {
+  height: 26px;
+  line-height: 26px;
+  margin: 2px;
+  float: left;
+}
+.attribute-img img {
+  height: 26px;
+  line-height: 26px;
+  margin: 2px;
+  float: left;
+}
+.topic-attr {
+  height: 30px;
+}
+.important-marker img {
+  float: right;
+}
+.user-attr {
+  height: 30px;
+}
+.comment-attr {
+  height: 30px;
+}
+.date {
+  float: right;
+}
+
+.comment-body {
+  margin: 4px;
+  border-top: thin solid #888;
+}
+.title {
+  padding: 8px;
+}

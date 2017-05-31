@@ -1,16 +1,15 @@
 module Model exposing (..)
 
-import QuadFunc exposing (QuadFunc(QuadFunc))
-
+import LinearFunction exposing (LinearFunction)
 
 -- MODEL
 
 
 type alias Model =
-    { quadFunc : QuadFunc }
+    { func : LinearFunction }
 
 
 initialModel : Model
 initialModel =
-    { quadFunc = QuadFunc 2 4 3
+    { func = { a = 1.5, b = 3 }
     }

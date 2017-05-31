@@ -5,8 +5,7 @@ import Html exposing (Html, button, div, h1, img, input, p, span, text)
 import Html.Attributes exposing (class, src, style, type_, value)
 import Html.Events exposing (onClick, onInput)
 import Model exposing (Model)
-import Msg exposing (Msg(NoOp, UpdateParamA, UpdateParamB, UpdateParamC))
-import QuadFunc exposing (QuadFunc, paramA, paramB, paramC, topOfGraph)
+import Msg exposing (Msg(NoOp, UpdateParamA, UpdateParamB))
 
 
 view : Model -> Html Msg
@@ -20,44 +19,35 @@ view model =
 textView : Model -> Html Msg
 textView model =
     let
-        paramText getParam =
-            toString << getParam <| model.quadFunc
+        paramText param =
+            toString << param <| model.func
 
-        updateParamMsg default msg txt =
+        updateParamMsg msg txt =
             Result.withDefault NoOp <| Result.map msg <| String.toFloat txt
 
         updateParamA =
-            updateParamMsg (paramA model.quadFunc) UpdateParamA
+            updateParamMsg UpdateParamA
 
         updateParamB =
-            updateParamMsg (paramB model.quadFunc) UpdateParamB
-
-        updateParamC =
-            updateParamMsg (paramC model.quadFunc) UpdateParamC
+            updateParamMsg UpdateParamB
     in
     div [ style styles.editingView ]
         [ h1 [] [ text "FORMULA" ]
         , div [ style styles.editor ]
             [ text "y = "
-            , input [ value <| paramText paramA, type_ "number", onInput updateParamA ] []
-            , text "x^2 + "
-            , input [ value <| paramText paramB, type_ "number", onInput updateParamB ] []
+            , input [ value <| paramText .a, type_ "number", onInput updateParamA ] []
             , text "x + "
-            , input [ value <| paramText paramC, type_ "number", onInput updateParamC ] []
+            , input [ value <| paramText .b, type_ "number", onInput updateParamB ] []
             ]
         ]
 
 
 visualView : Model -> Html Msg
 visualView model =
-    let
-        top =
-            topOfGraph model.quadFunc
-    in
     div [ style styles.showingView ]
         [ h1 [] [ text "GRAPH" ]
         , div [ style styles.viewer ]
-            [ graphSvg -200 -200 200 200 model
+            [ graphSvg -400 -400 400 400 100 model
             ]
         ]
 

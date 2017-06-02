@@ -73,5 +73,5 @@ styles =
     , editingView = [ "width" => "50%", "background" => "#eeeeee", "height" => "100%", "padding" => "16px", "display" => "flex", "flex-direction" => "column", "resize" => "none" ]
     , editor = [ "width" => "100%", "resize" => "none", "height" => "80%", "padding" => "4px" ]
     , showingView = [ "flex" => "1", "background" => "#ffffff", "height" => "100%", "padding" => "16px", "width" => "50%" ]
-    , viewer = [ "width" => "100%", "overflow" => "scroll", "padding" => "4px", "height" => "80%", "border" => "1px solid #aaa" ]
+    , viewer = [ "width" => "100%", "overflow" => "scroll", "height" => "80%", "border" => "1px solid #aaa" ]
     }

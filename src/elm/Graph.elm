@@ -1,12 +1,12 @@
 module Graph exposing (..)
 
 import Html exposing (Html)
+import Json.Decode as Json
 import LinearFunction
 import Model exposing (Model)
 import Msg exposing (Msg)
 import Svg exposing (circle, line, path, svg)
 import Svg.Attributes exposing (cx, cy, d, fill, id, r, stroke, strokeWidth, viewBox, x1, x2, y1, y2)
-import Json.Decode as Json
 
 
 graphSvg : Float -> Float -> Float -> Float -> Float -> Model -> Html Msg

@@ -2,6 +2,7 @@ module Model exposing (..)
 
 import LinearFunction exposing (LinearFunction)
 
+
 -- MODEL
 
 

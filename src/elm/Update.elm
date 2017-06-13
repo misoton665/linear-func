@@ -5,13 +5,13 @@ import Model exposing (Model)
 import Msg exposing (Msg(KeyDown, NoOp, UpdateParamA, UpdateParamB))
 
 
-update : Msg -> Model -> (Model, Cmd Msg)
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     let
         origFunc =
             model.func
     in
-    (case msg of
+    ( case msg of
         NoOp ->
             model
 
@@ -23,28 +23,23 @@ update msg model =
 
         KeyDown keycode ->
             if keycode == keyCodes.up then
-                { model | func = {origFunc | b = origFunc.b + 0.20}}
-
+                { model | func = { origFunc | b = origFunc.b + 0.2 } }
             else if keycode == keyCodes.down then
-                { model | func = {origFunc | b = origFunc.b - 0.20}}
-
+                { model | func = { origFunc | b = origFunc.b - 0.2 } }
             else if keycode == keyCodes.left then
-                { model | func = {origFunc | a = origFunc.a + 0.20}}
-
+                { model | func = { origFunc | a = origFunc.a + 0.2 } }
             else if keycode == keyCodes.right then
-                { model | func = {origFunc | a = origFunc.a - 0.20}}
-
+                { model | func = { origFunc | a = origFunc.a - 0.2 } }
             else
                 model
+    , Cmd.none
+    )
 
-                , Cmd.none)
 
-
-keyCodes : {up: KeyCode, down: KeyCode, left: KeyCode, right: KeyCode}
+keyCodes : { up : KeyCode, down : KeyCode, left : KeyCode, right : KeyCode }
 keyCodes =
-    {
-        up = 38,
-        down = 40,
-        left = 37,
-        right = 39
+    { up = 38
+    , down = 40
+    , left = 37
+    , right = 39
     }

@@ -47,8 +47,9 @@ visualView model =
     div [ style styles.showingView ]
         [ h1 [] [ text "GRAPH" ]
         , div [ style styles.viewer ]
-            [ graphSvg -400 -400 400 400 100 model
+            [ graphSvg -400.0 -400.0 400.0 400.0 100.0 model
             ]
+        , text "←: increment a, →: decrement a, ↑: increment b, ↓: decrement b"
         ]
 
 
